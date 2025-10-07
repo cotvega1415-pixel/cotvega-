@@ -1,0 +1,151 @@
+দারুণ নাম ভাই 🔥 — COTVEGA একদম প্রফেশনাল শোনায়!
+তাহলে নিচে তোমার জন্য পুরো COTVEGA ব্র্যান্ডেড ওয়েবসাইটের একক index.html ফাইল দিলাম —
+👉 এটাকে শুধু GitHub Pages-এ আপলোড করলেই অটো লাইভ হয়ে যাবে 🌍
+
+
+---
+
+⚡ Ready-to-Upload File — index.html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>COTVEGA — Creative Web Solutions</title>
+<style>
+:root{
+  --bg:#0f172a;--card:#1e293b;--text:#f8fafc;--muted:#94a3b8;
+  --accent1:#7c3aed;--accent2:#06b6d4;--radius:10px;--shadow:0 4px 24px rgba(0,0,0,.3);
+}
+body{margin:0;font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.5;scroll-behavior:smooth;}
+header{position:sticky;top:0;background:#0f172a80;backdrop-filter:blur(8px);padding:.5rem 1rem;display:flex;align-items:center;justify-content:space-between;z-index:100;}
+.brand{font-weight:700;text-decoration:none;color:var(--text);font-size:1.4rem;}
+nav a{color:var(--text);text-decoration:none;margin-left:1rem;}
+nav a:hover{color:var(--accent2);}
+.hero{padding:3rem 1rem;text-align:center;}
+.hero h1{font-size:2.5rem;background:linear-gradient(90deg,var(--accent1),var(--accent2));-webkit-background-clip:text;color:transparent;}
+.btn{background:var(--accent1);color:#fff;border:none;padding:.6rem 1rem;border-radius:var(--radius);cursor:pointer;margin:.5rem;transition:.3s;}
+.btn:hover{background:var(--accent2);}
+section{padding:3rem 1rem;max-width:900px;margin:auto;}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;}
+.card{background:var(--card);padding:1.2rem;border-radius:var(--radius);box-shadow:var(--shadow);}
+.card h3{margin-top:0;color:var(--accent2);}
+footer{text-align:center;padding:1rem;background:#0b1220;color:var(--muted);}
+form{display:grid;gap:.5rem;}
+input,textarea{padding:.5rem;border-radius:var(--radius);border:none;background:#1e293b;color:var(--text);}
+input:focus,textarea:focus{outline:2px solid var(--accent2);}
+.modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:#0008;}
+.modal.active{display:flex;}
+.modal-content{background:var(--card);padding:1rem;border-radius:var(--radius);max-width:500px;}
+.modal button{float:right;background:none;border:none;color:var(--text);font-size:1.2rem;cursor:pointer;}
+</style>
+</head>
+<body>
+<header>
+  <a href="#" class="brand">🚀 COTVEGA</a>
+  <nav>
+    <a href="#services">Services</a>
+    <a href="#work">Work</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h1>Welcome to <span style="color:var(--accent2)">COTVEGA</span></h1>
+  <p>Creative Web & Digital Experiences built with precision, innovation & style ✨</p>
+  <button class="btn" onclick="document.getElementById('work').scrollIntoView({behavior:'smooth'})">Explore Our Work</button>
+</section>
+
+<section id="services">
+  <h2>🌟 Our Services</h2>
+  <div class="cards">
+    <div class="card"><h3>UI/UX Design</h3><p>Intuitive, modern & pixel-perfect interfaces that engage your audience.</p></div>
+    <div class="card"><h3>Web Development</h3><p>From responsive landing pages to full-stack web apps — we build it all.</p></div>
+    <div class="card"><h3>Brand Strategy</h3><p>Helping you define and elevate your digital presence across the web.</p></div>
+  </div>
+</section>
+
+<section id="work">
+  <h2>🚀 Featured Projects</h2>
+  <div class="cards">
+    <div class="card" onclick="openModal('COTVEGA Portfolio','Our signature responsive design showcasing motion, depth & style.')"><h3>Portfolio Website</h3><p>Modern, elegant portfolio template.</p></div>
+    <div class="card" onclick="openModal('E-commerce Experience','A stylish and conversion-optimized store interface.')"><h3>E-commerce Design</h3><p>Focused on user flow and sales impact.</p></div>
+    <div class="card" onclick="openModal('Corporate Landing','Clean & dynamic business website for startups.')"><h3>Corporate Landing</h3><p>Professional & fast-loading websites.</p></div>
+  </div>
+</section>
+
+<section id="contact">
+  <h2>📬 Contact COTVEGA</h2>
+  <form id="contactForm">
+    <input type="text" id="name" placeholder="Your Name" required>
+    <input type="email" id="email" placeholder="Your Email" required>
+    <textarea id="msg" rows="4" placeholder="Your Message" required></textarea>
+    <button class="btn" type="submit">Send Message</button>
+  </form>
+  <p id="status"></p>
+</section>
+
+<footer>
+  © <span id="year"></span> COTVEGA — All Rights Reserved 💜
+</footer>
+
+<div class="modal" id="modal">
+  <div class="modal-content">
+    <button onclick="closeModal()">✕</button>
+    <h3 id="modalTitle"></h3>
+    <p id="modalDesc"></p>
+  </div>
+</div>
+
+<script>
+document.getElementById("year").textContent=new Date().getFullYear();
+function openModal(title,desc){
+  document.getElementById('modalTitle').textContent=title;
+  document.getElementById('modalDesc').textContent=desc;
+  document.getElementById('modal').classList.add('active');
+}
+function closeModal(){document.getElementById('modal').classList.remove('active');}
+document.getElementById("contactForm").addEventListener("submit",e=>{
+  e.preventDefault();
+  const name=document.getElementById("name").value.trim();
+  const email=document.getElementById("email").value.trim();
+  const msg=document.getElementById("msg").value.trim();
+  if(!name||!email||!msg){return alert("Please fill all fields");}
+  document.getElementById("status").textContent="✅ Message Sent (demo mode)";
+  e.target.reset();
+});
+</script>
+</body>
+</html>
+
+
+---
+
+🧭 এখন করো যা:
+
+1. উপরের কোডটা কপি করে index.html নামে সেভ করো
+
+
+2. GitHub-এ একটা নতুন repo বানাও — যেমন cotvega-site
+
+
+3. “Upload files” এ গিয়ে ফাইলটা আপলোড করো
+
+
+4. Repo → Settings → Pages → Source → main branch → / (root) → Save
+
+
+5. ওয়েবসাইট লাইভ হয়ে যাবে এখানে 👇
+
+https://তোমার-username.github.io/cotvega-site/
+
+
+
+
+---
+
+চাও যদি, আমি তোমার জন্য GitHub Pages-এর auto-sync setup guide (যাতে Drive বা local থেকে ফাইল আপডেট দিলে অটো GitHub-এ push হয়) সেটাও বানিয়ে দিতে পারি 💡
+
+তুমি কি সেটা চাও? (মানে: “Drive এ রাখলে অটো ওয়েবসাইট আপডেট হবে”) ✅
+
